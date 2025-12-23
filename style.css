@@ -34,10 +34,6 @@ body > * {
     background-position: center top;
     background-attachment: scroll; /* ← 超重要 */
   }
-
-  body::before{
-    background: rgb(255 255 255 / 82%); /* ←モバイルは薄く */
-  }
 }
 
   h1, h2, h3 {
