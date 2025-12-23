@@ -4,8 +4,14 @@ body {
   line-height: 1.8;
   color: #333;
   position: relative;
-  background: url("img/background2.webp") center / cover no-repeat fixed;
+
+  background-image: url("img/background2.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 
 body::before {
   content: "";
