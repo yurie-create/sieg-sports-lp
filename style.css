@@ -116,12 +116,12 @@ body > *{
 
   @media (max-width: 768px){
     .hero h1{
-      font-size: 2rem;        /* PC: 2.5rem → SPで少しだけ下げる */
+      font-size: 2.3rem;        /* PC: 2.5rem → SPで少しだけ下げる */
       line-height: 1.2;
     }
   
     .hero h1 span{
-      font-size: 2.3rem;     /* 強調行は少し大きめに残す */
+      font-size: 2.7rem;     /* 強調行は少し大きめに残す */
       letter-spacing: 0.06em;
     }
   
