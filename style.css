@@ -186,6 +186,15 @@ body > *{
     color: #fff;
     text-align: center;
   }
+
+  @media (max-width: 768px){
+    .cta h2{
+      font-size: 1.2rem;   /* 少しだけ小さく */
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+    }
+  }
+  
   
   .info {
     text-align: center;
