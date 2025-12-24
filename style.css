@@ -34,7 +34,7 @@ body > *{
 @media (max-width: 768px){
   body::before{
     background-image:
-      linear-gradient(rgb(255 255 255 / 82%), rgb(255 255 255 / 82%)),
+      linear-gradient(rgb(255 255 255 / 94%), rgb(255 255 255 / 94%)),
       url("img/background2-sp.webp");
     background-position: center top, center top;
   }
