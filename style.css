@@ -1,37 +1,42 @@
-body {
+body{
   margin: 0;
   font-family: "Hiragino Kaku Gothic ProN", sans-serif;
   line-height: 1.8;
   color: #333;
   position: relative;
-
-  background-image: url("img/background2.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: none; /* ← ここ重要 */
 }
 
-
-body::before {
-  content: "";
+/* 背景固定レイヤー（画像＋白ベールを1枚で） */
+body::before{
+  content:"";
   position: fixed;
   inset: 0;
-  background: rgb(255 255 255 / 94%);
   z-index: 0;
   pointer-events: none;
+
+  /* PC背景 */
+  background-image:
+    linear-gradient(rgb(255 255 255 / 94%), rgb(255 255 255 / 94%)),
+    url("img/background2.webp");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
-body > * {
+/* 本文は前面 */
+body > *{
   position: relative;
   z-index: 1;
 }
 
+/* モバイル背景（固定のまま画像だけ差し替え） */
 @media (max-width: 768px){
-  body{
-    background-image: url("img/background2-sp.webp");
-    background-position: center top;
-    background-attachment: fixed;
+  body::before{
+    background-image:
+      linear-gradient(rgb(255 255 255 / 82%), rgb(255 255 255 / 82%)),
+      url("img/background2-sp.webp");
+    background-position: center top, center top;
   }
 }
 
