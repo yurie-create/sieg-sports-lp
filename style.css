@@ -832,6 +832,16 @@ ul li {
   text-decoration: underline;
 }
 
+@media (max-width: 480px){
+  .footer-nav{
+    flex-wrap: wrap;          /* ← スマホだけ折り返す */
+    white-space: normal;
+    row-gap: 6px;
+    font-size: 0.85rem;
+  }
+}
+
+
 .back-to-top {
   margin-top: 60px;
   margin-bottom: 60px;
