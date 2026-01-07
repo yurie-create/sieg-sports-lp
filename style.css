@@ -812,6 +812,12 @@ ul li {
 
 .footer-nav {
   margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;       /* ← 折り返さない */
+  white-space: nowrap;     /* ← 改行させない */
+  font-size: 0.9rem;
 }
 
 .footer-nav a {
