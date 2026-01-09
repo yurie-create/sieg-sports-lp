@@ -581,6 +581,34 @@ body > *{
   border-right: 10px solid #fff;
 }
 
+.schedule-box{
+  margin: 24px auto;
+  padding: 18px 20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  max-width: 640px;
+}
+
+.schedule-title{
+  font-weight: 900;
+  color: #ff6b00;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.schedule-box p{
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.schedule-note{
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 8px;
+}
+
+
 /* モバイル */
 @media (max-width: 768px){
   .coach-balloon{
