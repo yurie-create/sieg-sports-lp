@@ -1,0 +1,632 @@
+:root{
+  --bg: #ffffff;
+  --ink: #1c1917;
+  --muted: #57534e;
+  --line: #e7e5e4;
+  --soft: #fff7ed;
+
+  --accent: #f97316;   /* メインオレンジ */
+  --accent2: #ea580c;  /* 濃いオレンジ（hover用） */
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(124,45,18,.12);
+  --max: 1080px;
+}
+
+  
+  *{ box-sizing:border-box; }
+  html,body{
+    margin:0;
+    padding:0;
+    color:var(--ink);
+    background:var(--bg);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  
+  .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
+  .section{ padding:64px 0; }
+  .section--soft{ background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  
+  /* Topbar */
+  .topbar{
+    position:sticky; top:0; z-index:10;
+    background:rgba(255,255,255,.86);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar__inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 0;
+    gap:12px;
+  }
+  .brand{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.02em; }
+  .brand__badge{
+    width:34px; height:34px; border-radius:10px;
+    background: linear-gradient(135deg, #f97316, #fb923c);
+  box-shadow: 0 6px 16px rgba(249,115,22,.35);
+  }
+  .nav{ display:flex; gap:12px; align-items:center; }
+  .nav a{ font-size:14px; color:var(--muted); padding:8px 10px; border-radius:10px; }
+  .nav a:hover{ background:#eef2ff; color:var(--ink); }
+  
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:12px 16px;
+    border-radius:12px;
+    font-weight:700;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:.18s ease;
+    user-select:none;
+    white-space:nowrap;
+  }
+  .btn--primary{
+    background: var(--accent);
+    color:#fff;
+    box-shadow: 0 12px 24px rgba(249,115,22,.28);
+  }
+  
+  .btn--primary:hover{ background:var(--accent2); transform: translateY(-1px); }
+  .btn--ghost{
+    background:transparent;
+    border-color:var(--line);
+    color:var(--ink);
+  }
+  .btn--ghost:hover{ background:#f1f5f9; }
+  
+  /* Hero */
+  .hero{
+    padding:58px 0 40px;
+    background:
+    radial-gradient(1200px 500px at 30% 0%, rgba(249,115,22,.18), transparent 60%),
+    radial-gradient(900px 420px at 80% 10%, rgba(251,146,60,.16), transparent 60%);  
+    border-bottom:1px solid var(--line);
+  }
+  .hero__grid{
+    display:grid;
+    grid-template-columns: 1.25fr .75fr;
+    gap:24px;
+    align-items:center;
+  }
+  .pill{
+    display:inline-flex; gap:10px; align-items:center;
+    padding:8px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:rgba(255,255,255,.7);
+    color:var(--muted);
+    font-size:13px;
+    width:fit-content;
+  }
+  .hero h1{
+    margin:14px 0 8px;
+    font-size:40px; line-height:1.15;
+    letter-spacing:-.02em;
+  }
+  .hero__lead{
+    margin:0;
+    color:var(--muted);
+    font-size:16px;
+    line-height:1.8;
+    max-width:62ch;
+  }
+  .hero__cta{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-top:18px;
+    align-items:center;
+  }
+  .hero__meta{
+    margin-top:14px;
+    display:flex; gap:10px; flex-wrap:wrap;
+    color:var(--muted);
+    font-size:13px;
+  }
+  .meta-card{
+    display:flex; gap:8px; align-items:center;
+    padding:8px 10px;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:rgba(255,255,255,.7);
+  }
+  .hero__side{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    align-items:stretch;
+  }
+  .hero__trust{
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .hero__trust p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.7;
+  }
+  .hero__trust b{ color:var(--ink); }
+  
+  /* Common blocks */
+  .card{
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+    box-shadow: var(--shadow);
+  }
+  .card__pad{ padding:6px; }
+  .card--flat{ box-shadow:none; }
+  
+  .ph{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border:1px dashed #cbd5e1;
+    background: #f8fafc;
+    color:#64748b;
+    border-radius:14px;
+    padding:10px;
+    font-size:12px;
+    line-height:1.4;
+  }
+  .ph--120{ width:90%; height:100%; background: #ffffff00;  padding: 0;}
+  .ph--160{ width:160px; height:160px; }
+  .ph--banner{ width:100%; height:220px; border-radius:18px; }
+  
+  .h2{
+    margin:0 0 10px;
+    font-size:26px;
+    letter-spacing:-.01em;
+  }
+  .sub{
+    margin:0 0 18px;
+    color:var(--muted);
+    line-height:1.8;
+  }
+  
+  .grid-2{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:18px;
+  }
+  .grid-3{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:18px;
+  }
+  
+  /* Lists */
+  .list{
+    margin:0; padding:0;
+    list-style:none;
+    display:grid;
+    gap:10px;
+  }
+  .li{
+    display:flex; gap:10px; align-items:flex-start;
+    padding:12px 12px;
+    border:1px solid var(--line);
+    border-radius:14px;
+    background:#fff;
+  }
+  .dot{
+    width:10px; height:10px; margin-top:6px;
+    border-radius:999px;
+    background: var(--accent);
+    flex:0 0 auto;
+  }
+  .li p{ margin:0; color:var(--muted); line-height:1.7; }
+  .li b{ color:var(--ink); }
+  
+  .kpi{ display:flex; flex-direction:column; gap:4px; }
+  .kpi__t{ font-weight:800; font-size:16px; }
+  .kpi__d{ color:var(--muted); font-size:13px; line-height:1.6; }
+  
+  .badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
+  .badge{
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--muted);
+  }
+  
+  /* Sections: minor utility */
+  .sp-16{ height:16px; }
+  .sectionLabel{ font-weight:800; margin-bottom:8px; }
+  
+  /* Pain */
+  .pain__note{ display:flex; gap:14px; align-items:center; height: 100%;}
+  .pain__text{ margin:0; color:var(--muted); line-height:1.9; }
+  
+  /* Benefits */
+  .benefits__highlight{ box-shadow:none; margin-top:14px; border-color:#fed7aa;
+    background:#fff7ed; }
+  .benefits__highlightText{ color:#9a3412; line-height:1.9; }
+  .benefits__side{ display:flex; gap:14px; align-items:flex-start; }
+  .benefits__sideText{ margin:20px; color:var(--muted); line-height:1.9; }
+  .benefits__kpis{ margin-top:18px; }
+  
+  /* Coach */
+  .profile{ display:flex; gap:16px; align-items:flex-start; }
+  .profile__head h3{ margin:0 0 6px; font-size:18px; letter-spacing:-.01em; }
+  .profile__head p{ margin:0; color:var(--muted); line-height:1.75; }
+  .coach__text{ margin-top:10px; }
+  .coach__quoteCard{ box-shadow:none; margin-top:12px; border-color:#e2e8f0; background:#f8fafc; }
+  .coach__quoteText{ color:var(--muted); line-height:1.9; }
+  
+  /* Voices */
+  .quote{ display:flex; gap:14px; align-items:flex-start; }
+  .quote blockquote{ margin:0; padding:6px; color:var(--muted); line-height:1.9; font-size:15px; }
+  .stars{ color:var(--ink); font-weight:800; letter-spacing:.06em; font-size:14px; margin-bottom:8px; }
+  .q-meta{ margin:0 0 8px; color:var(--muted); font-size:13px; }
+  .voices__why{ margin-top:18px; }
+  .voices__whyTitle{ margin:0 0 8px; font-size:18px; }
+  .voices__whyLead{ margin:7px; }
+  .voices__whyList{ margin:12px 0 0; color:var(--muted); line-height:1.9; }
+  .voices__whyEnd{ margin:12px 7px 0; color:var(--muted); line-height:1.9; }
+  
+  /* Details */
+  .details__flow{ box-shadow:none; margin-top:14px; border-color:#e2e8f0; background:#f8fafc; }
+  .details__flowInner{ display:flex; gap:14px; align-items:flex-start; }
+  .details__flowText{ color:var(--muted); line-height:1.9; }
+  .details__flowTitle{ font-weight:800; color:var(--ink); margin-bottom:8px; }
+  .details__flowList{ margin:0; padding-left:18px; }
+  .details__flowNote{ font-size:13px; margin-top:10px; }
+  
+  /* CTA */
+  .cta{
+    display:grid;
+    grid-template-columns: 1fr .9fr;
+    gap:18px;
+    align-items:center;
+  }
+  .cta__box{
+    padding:20px;
+    border-radius:18px;
+    border: 1px solid rgba(249,115,22,.35);
+    background: linear-gradient(
+      135deg,
+      rgba(249,115,22 / 6%),
+      rgba(251,146,60,.12)
+    );
+  }
+  .cta__box h3{ margin:0 0 8px; font-size:20px; letter-spacing:-.01em; }
+  .cta__box p{ margin:0 0 14px; color:var(--muted); line-height:1.8; }
+  .cta__label{ font-weight:800; margin:10px 0 10px; }
+  .cta__mini{
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:10px;
+  }
+  .apply__note{ display:flex; gap:14px; align-items:flex-start; }
+  .apply__noteTitle{ font-weight:800; margin-bottom:6px; }
+  .apply__noteText{ margin:0; color:var(--muted); line-height:1.9; }
+  
+  /* Footer */
+  .footer{
+    padding:26px 0;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:13px;
+  }
+  .footer__inner{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .footer__link{
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  
+  /* responsive */
+  @media (max-width: 920px){
+    .hero__grid{ grid-template-columns: 1fr; }
+    .hero h1{ font-size:34px; }
+    .grid-3{ grid-template-columns: 1fr; }
+    .grid-2{ grid-template-columns: 1fr; }
+    .cta{ grid-template-columns: 1fr; }
+    .nav{ display:none; }
+    .ph--banner{ height:200px; }
+    .profile{ flex-direction:column; }
+  }
+  
+
+  .kis_top{
+    display: flex;
+  }
+
+  /* ===== どのスポーツにもつながる BOX ===== */
+.sports-base-box{
+    margin-top: 18px;
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid var(--line);
+    background: linear-gradient(
+      135deg,
+      rgba(249,115,22 / 6%),
+      rgba(251,146,60,.12)
+    );
+    box-shadow: 0 10px 24px rgba(2,6,23,.06);
+  }
+  
+  .sports-base-box__title{
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  
+  .sports-base-box__lead{
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  
+  .sports-base-box__text{
+    margin: 0 0 10px;
+    color: var(--muted);
+    line-height: 1.9;
+  }
+  
+  .sports-base-box__text:last-child{
+    margin-bottom: 0;
+  }
+  
+  /* 文章の強調（既に全体で b に色が付かない場合の保険） */
+  .sports-base-box b{
+    color: var(--ink);
+  }
+  
+  /* スマホで余白調整 */
+  @media (max-width: 480px){
+    .sports-base-box{
+      padding: 16px;
+      border-radius: 14px;
+    }
+  }
+  .h2{
+    margin: 0 0 18px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    position: relative;
+  }
+  
+  .h2::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-top: 10px;
+    background: var(--accent);
+    border-radius: 999px;
+  }
+  
+  @media (max-width: 768px){
+    .h2{
+      font-size: 26px;
+      text-shadow: 4px 2px 9px #e2ff6c;
+    }
+  }
+  
+  /* =========================
+   仕上げ：全体の整形（追記）
+   ========================= */
+
+/* 1) 全体の読みやすさ：行間と文字のにじみを最適化 */
+body{
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 2) セクションの「左右の揃い」を統一（benefitsのh2がcontainer外に出てるのを自然に） */
+.section > .h2{
+  max-width: var(--max);
+  margin: 0 auto 18px;
+  padding: 0 18px;
+}
+.section > picture{
+  display:block;
+  max-width: var(--max);
+  margin: 0 auto 18px;
+  padding: 0 18px;
+}
+
+/* 3) 画像の角丸＆枠を統一（写真とデザインの馴染みUP） */
+.kis img,
+.hero__trust-img,
+.ph img,
+.card img{
+  border-radius: 16px;
+}
+.kis img{
+  border: 1px solid var(--line);
+}
+
+/* 4) カードの余白を少し増やして「高級感」 */
+.card__pad{ padding: 16px; }
+@media (max-width: 920px){
+  .card__pad{ padding: 14px; }
+}
+
+/* 5) Heroの右側（画像カード）をよりバランス良く */
+.hero__side .card{
+  overflow:hidden;
+}
+.hero__trust{
+  padding: 10px;
+}
+.hero__trust-img{
+  width: 100%;
+  height: auto;
+  display:block;
+  object-fit: contain;
+}
+
+/* 6) pillを少しリッチに（視認性UP） */
+.pill{
+  border-color: rgba(249,115,22,.25);
+  background: rgba(255,247,237,.75);
+}
+
+/* 7) 見出し下線（h2::after）を「ちょい短く」してデザイン感 */
+.h2::after{
+  width: 84px;      /* 100%→短く */
+  height: 5px;
+}
+
+/* 8) リスト要素の見た目を統一（dot/余白） */
+.li{
+  padding: 14px 14px;
+}
+.dot{
+  width: 10px;
+  height: 10px;
+  margin-top: 7px;
+  background: var(--accent);
+  box-shadow: 0 6px 12px rgba(249,115,22,.18);
+}
+
+/* 9) benefitsの“青寄り”部品をオレンジ側で統一（残ってたら上書き） */
+.benefits__highlight{
+  border-color: rgba(249,115,22,.22);
+  background: rgba(255,247,237,.8);
+}
+.benefits__highlightText{
+  color: #9a3412;
+}
+
+/* 10) CTAを「押したくなる」配置に：ボタン幅と間隔 */
+.cta__box .btn--primary{
+  width: 100%;
+  max-width: 420px;
+}
+.cta__mini{
+  gap: 8px;
+  margin-top: 12px;
+}
+
+/* 11) pictureの下に余白を作って詰まり感をなくす */
+.section picture img{
+  border: 1px solid var(--line);
+}
+
+/* 12) スマホでの詰まりを解消（セクション余白微調整） */
+@media (max-width: 480px){
+  .section{ padding: 52px 0; }
+  .hero{ padding: 44px 0 28px; }
+  .h2{ font-size: 24px; }
+  .h2::after{ width: 70px; }
+}
+
+/* =========================
+   Hero h1 行ごと強調
+   ========================= */
+
+   .hero__title{
+    margin: 14px 0 8px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  /* 1行目：説明（控えめ） */
+  .hero__title-sub{
+    display:block;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+  }
+  
+  /* 2行目：メイン（強調） */
+  .hero__title-main{
+    display:block;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--ink);
+    margin-top: 4px;
+  }
+  
+  /* スマホ調整 */
+  @media (max-width: 768px){
+    .hero__title-sub{
+      font-size: 20px;
+    }
+    .hero__title-main{
+      font-size: 40px;
+    }
+  }
+  
+  /* =========================
+   Mobile Hamburger Menu
+   ========================= */
+
+.brand--menu{
+  cursor: pointer;
+}
+
+/* メニュー本体 */
+.mobile-menu{
+  position: fixed;
+  inset: 0;
+  background: rgba(28,25,23,.45);
+  backdrop-filter: blur(6px);
+  z-index: 999;
+  display: none;
+}
+
+.mobile-menu.is-open{
+  display: block;
+}
+
+.mobile-menu__nav{
+  position: absolute;
+  top: 64px;
+  left: 16px;
+  right: 16px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu__nav a{
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* PCでは無効化 */
+@media (min-width: 921px){
+  .brand--menu{
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 920px){
+  .brand__badge{
+    position: relative;
+  }
+  .brand__badge::after{
+    content: "≡";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: 900;
+    font-size: 18px;
+  }
+}
