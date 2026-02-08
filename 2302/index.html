@@ -55,11 +55,16 @@
 
   <section class="kis">
     <picture>
-      <!-- PC（例：768px以上） -->
-      <source media="(min-width: 768px)" srcset="imge/pc1.png">
-      <!-- スマホ（デフォルト） -->
-      <img src="imge/top1.png" alt="2/23単発陸上教室の告知" loading="lazy" />
+      <source media="(min-width: 768px)" srcset="imge/pc1.webp">
+      <img
+        src="imge/top1.webp"
+        alt="2/23単発陸上教室の告知"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      >
     </picture>
+    
     
     <!-- <div class="kis_top">
       <img src="imge/item1.png" alt="">
