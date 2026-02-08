@@ -630,3 +630,16 @@ body{
     font-size: 18px;
   }
 }
+
+
+.cta__box small{
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cta__box small a{
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
