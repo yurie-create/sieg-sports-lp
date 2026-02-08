@@ -643,3 +643,29 @@ body{
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.pill b{
+  color: var(--accent);
+}
+
+.apply__note b{
+  color: var(--accent);
+}
+
+/* pill: スマホで崩れないようにする */
+.pill{
+  flex-wrap: wrap;
+  white-space: normal;
+  max-width: 100%;
+}
+
+@media (max-width: 768px){
+  .pill{
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    gap: 6px;
+  }
+}
