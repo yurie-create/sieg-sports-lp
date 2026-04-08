@@ -129,6 +129,10 @@ body > *{
       font-size: 0.95rem;    /* 読みやすさ重視 */
       line-height: 1.6;
     }
+
+    .hero{
+      min-height: 70vh;
+    }
   }
   
   
@@ -346,7 +350,7 @@ body > *{
   .section-title--impact{
     padding: 14px 14px;
     border-radius: 14px;
-    font-size: 1.15rem;
+    font-size: 1.0rem;
   }
   .section-title--impact::after{
     bottom: -9px;
@@ -936,3 +940,47 @@ ul li {
   color:var(--ink);
 }
 .btn--ghost:hover{ background:#f1f5f9; }
+
+.change-img{
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: var(--shadow);
+}
+
+.pc-only{
+  display: block;
+}
+
+@media (max-width: 768px){
+  .pc-only{
+    display: none;
+  }
+}
+
+@media (max-width: 768px){.full-bleed{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.full-bleed img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+}
+
+@media (max-width: 768px){
+  h1, h2, h3, p, .hero-sub{
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px){
+  .coach-card p{
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
