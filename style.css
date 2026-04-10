@@ -984,3 +984,8 @@ ul li {
     line-height: 1.6;
   }
 }
+
+.seo-hidden{
+  position:absolute;
+  left:-9999px;
+}
