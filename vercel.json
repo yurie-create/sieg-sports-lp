@@ -1,0 +1,15 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "sieg-sports-lp.vercel.app"
+          }
+        ],
+        "destination": "https://school.sieg-sports.com/$1",
+        "permanent": true
+      }
+    ]
+  }
